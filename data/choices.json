@@ -1,0 +1,112 @@
+{
+  "parcelas_rodales": {
+    "exposicion": [
+      {
+        "code": "N",
+        "label": "N"
+      },
+      {
+        "code": "NE",
+        "label": "NE"
+      },
+      {
+        "code": "E",
+        "label": "E"
+      },
+      {
+        "code": "SE",
+        "label": "SE"
+      },
+      {
+        "code": "S",
+        "label": "S"
+      },
+      {
+        "code": "SO",
+        "label": "SO"
+      },
+      {
+        "code": "O",
+        "label": "O"
+      },
+      {
+        "code": "NO",
+        "label": "NO"
+      }
+    ],
+    "sobrevivencia": [
+      {
+        "code": "0",
+        "label": "Muerto"
+      },
+      {
+        "code": "1",
+        "label": "Vivo"
+      }
+    ],
+    "vitalidad": [
+      {
+        "code": "0",
+        "label": "Muerto"
+      },
+      {
+        "code": "1",
+        "label": "Vulnerable"
+      },
+      {
+        "code": "2",
+        "label": "Regular"
+      },
+      {
+        "code": "3",
+        "label": "Óptimo"
+      }
+    ],
+    "estado_fitosanitario": [
+      {
+        "code": "S",
+        "label": "Sano"
+      },
+      {
+        "code": "E",
+        "label": "Enfermo"
+      },
+      {
+        "code": "D",
+        "label": "Dañado"
+      }
+    ],
+    "dano_adicional": [
+      {
+        "code": "0",
+        "label": "Sin daño"
+      },
+      {
+        "code": "H",
+        "label": "Herbivoría (conejos)"
+      },
+      {
+        "code": "M",
+        "label": "Mecánico"
+      }
+    ],
+    "estado_del_protector": [
+      {
+        "code": "0",
+        "label": "No aplica"
+      },
+      {
+        "code": "1",
+        "label": "Sin protector"
+      },
+      {
+        "code": "2",
+        "label": "Mal estado"
+      },
+      {
+        "code": "3",
+        "label": "En buen estado"
+      }
+    ]
+  }
+}

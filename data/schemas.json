@@ -1,0 +1,222 @@
+{
+  "parcelas_rodales": {
+    "title": "Monitoreo de parcelas por rodal",
+    "store": "parcelas_rodales",
+    "header": [
+      {
+        "key": "date",
+        "label": "Fecha",
+        "type": "date",
+        "required": true,
+        "default": "today"
+      },
+      {
+        "key": "rodal",
+        "label": "Rodal",
+        "type": "text",
+        "required": true
+      },
+      {
+        "key": "plot_code",
+        "label": "Parcela",
+        "type": "text",
+        "required": true
+      },
+      {
+        "key": "utm_x",
+        "label": "Coordenadas X",
+        "type": "number",
+        "required": true
+      },
+      {
+        "key": "utm_y",
+        "label": "Coordenadas Y",
+        "type": "number",
+        "required": true
+      },
+      {
+        "key": "utm_zone",
+        "label": "UTM Zona",
+        "type": "hidden",
+        "default": "19S"
+      },
+      {
+        "key": "datum",
+        "label": "Datum",
+        "type": "hidden",
+        "default": "WGS84"
+      },
+      {
+        "key": "pendiente",
+        "label": "Pendiente",
+        "type": "number",
+        "required": true
+      },
+      {
+        "key": "exposicion",
+        "label": "Exposición",
+        "type": "select",
+        "choices": "parcelas_rodales.exposicion",
+        "required": true
+      },
+      {
+        "key": "altura_promedio_cm",
+        "label": "Altura promedio (cm)",
+        "type": "number",
+        "required": false
+      },
+      {
+        "key": "observacion",
+        "label": "Observación",
+        "type": "text",
+        "required": false
+      }
+    ],
+    "individuals": {
+      "fields": [
+        {
+          "key": "individual_seq",
+          "label": "N° individuo",
+          "type": "readonly"
+        },
+        {
+          "key": "species",
+          "label": "Especie",
+          "type": "readonly",
+          "default": "Quillay"
+        },
+        {
+          "key": "sobrevivencia",
+          "label": "Sobrevivencia",
+          "type": "select",
+          "choices": "parcelas_rodales.sobrevivencia",
+          "required": true
+        },
+        {
+          "key": "vitalidad",
+          "label": "Vitalidad",
+          "type": "select",
+          "choices": "parcelas_rodales.vitalidad",
+          "required_if": {
+            "field": "sobrevivencia",
+            "equals": "1"
+          }
+        },
+        {
+          "key": "estado_fitosanitario",
+          "label": "Estado fitosanitario",
+          "type": "select",
+          "choices": "parcelas_rodales.estado_fitosanitario",
+          "required_if": {
+            "field": "sobrevivencia",
+            "equals": "1"
+          }
+        },
+        {
+          "key": "dano_adicional",
+          "label": "Daño adicional",
+          "type": "select",
+          "choices": "parcelas_rodales.dano_adicional",
+          "required_if": {
+            "field": "sobrevivencia",
+            "equals": "1"
+          }
+        },
+        {
+          "key": "estado_del_protector",
+          "label": "Estado del protector",
+          "type": "select",
+          "choices": "parcelas_rodales.estado_del_protector",
+          "required": true
+        }
+      ],
+      "rules": [
+        {
+          "if": {
+            "field": "sobrevivencia",
+            "equals": "0"
+          },
+          "disable": [
+            "vitalidad",
+            "estado_fitosanitario",
+            "dano_adicional"
+          ],
+          "clear": [
+            "vitalidad",
+            "estado_fitosanitario",
+            "dano_adicional"
+          ]
+        }
+      ]
+    },
+    "csv": {
+      "filename_prefix": "parcelas_rodales",
+      "columns": [
+        {
+          "key": "header.date",
+          "label": "Fecha"
+        },
+        {
+          "key": "header.rodal",
+          "label": "Rodal"
+        },
+        {
+          "key": "header.plot_code",
+          "label": "Parcela"
+        },
+        {
+          "key": "header.utm_x",
+          "label": "Coordenadas X"
+        },
+        {
+          "key": "header.utm_y",
+          "label": "Coordenadas Y"
+        },
+        {
+          "key": "header.pendiente",
+          "label": "Pendiente"
+        },
+        {
+          "key": "header.exposicion",
+          "label": "Exposición"
+        },
+        {
+          "key": "header.altura_promedio_cm",
+          "label": "Altura promedio (cm)"
+        },
+        {
+          "key": "header.observacion",
+          "label": "Observación"
+        },
+        {
+          "key": "ind.individual_seq",
+          "label": "Ejemplar"
+        },
+        {
+          "key": "ind.species",
+          "label": "Especie"
+        },
+        {
+          "key": "ind.sobrevivencia",
+          "label": "Sobrevivencia"
+        },
+        {
+          "key": "ind.vitalidad",
+          "label": "Vitalidad"
+        },
+        {
+          "key": "ind.estado_fitosanitario",
+          "label": "Estado fitosanitario"
+        },
+        {
+          "key": "ind.dano_adicional",
+          "label": "Daño adicional"
+        },
+        {
+          "key": "ind.estado_del_protector",
+          "label": "Estado del protector"
+        }
+      ]
+    }
+  }
+}
